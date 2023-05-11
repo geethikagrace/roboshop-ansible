@@ -1,3 +1,6 @@
-- name: Demo
-  ansible.builtin.debug:
-    msg: component - catalogue
+- name: Import nodejs from common
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodej
+
+
