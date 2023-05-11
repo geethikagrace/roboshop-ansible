@@ -10,12 +10,12 @@
     dest: /etc/nginx/default.d/roboshop.conf
 
 
-- name: removing old content
+- name: Clean Old App content
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
 
-- name: create app directory
+- name: Create app directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
