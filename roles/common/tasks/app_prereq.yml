@@ -21,8 +21,5 @@
     dest: /app
     remote_src: yes
 
-- name: load schema setup
-  ansible.builtin.import_tasks:
-    file: schema_setup.yml
 
 
