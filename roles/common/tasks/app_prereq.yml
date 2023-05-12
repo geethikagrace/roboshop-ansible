@@ -1,5 +1,3 @@
-
-
 - name: Create Application User
   ansible.builtin.user:
     name: "{{app_user}}"
