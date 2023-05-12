@@ -2,7 +2,6 @@
   ansible.builtin.user:
     name: "{{app_user}}"
 
-
 - name: Clean Old App content
   ansible.builtin.file:
     path: /app
