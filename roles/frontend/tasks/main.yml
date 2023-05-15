@@ -1,14 +1,12 @@
-
-- name: install nginx
+- name: Install Nginx
   ansible.builtin.yum:
     name: nginx
     state: installed
 
-- name: copy roboshop config file
+- name: Copy roboshop Config file
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-
 
 - name: Clean Old App content
   ansible.builtin.file:
