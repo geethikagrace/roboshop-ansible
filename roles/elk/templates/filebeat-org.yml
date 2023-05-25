@@ -26,11 +26,11 @@ filebeat.inputs:
     id: my-filestream-id
 
     # Change to true to enable this input configuration.
-    enabled: false
+    enabled: true
 
     # Paths that should be crawled and fetched. Glob based paths.
     paths:
-      - /var/log/*.log
+      - /var/log/nginx/access.log
       #- c:\programdata\elasticsearch\logs\*
 
     # Exclude lines. A list of regular expressions to match. It drops the lines th                                                                                        at are
@@ -133,9 +133,9 @@ setup.kibana:
 # Configure what output to use when sending the data collected by the beat.
 
 # ---------------------------- Elasticsearch Output ----------------------------
-output.elasticsearch:
+#output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
+  #hosts: ["localhost:9200"]
 
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"
@@ -146,9 +146,9 @@ output.elasticsearch:
   #password: "changeme"
 
   # ------------------------------ Logstash Output -------------------------------
-  #output.logstash:
+  output.logstash:
   # The Logstash hosts
-  #hosts: ["localhost:5044"]
+  hosts: ["172.31.88.154:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
