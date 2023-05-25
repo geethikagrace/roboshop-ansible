@@ -4,7 +4,7 @@
      dest: /etc/logstash/conf.d/logstash.conf
 
  - name: Restart logstash
-   ansible.bultin.systemd:
+   ansible.builtin.systemd:
      name: logstash
      state: restarted
      enabled:  yes
