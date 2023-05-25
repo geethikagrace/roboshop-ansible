@@ -6,7 +6,7 @@ filebeat.inputs:
    paths:
       - { { log_file } }
 
-output.elasticsearch:
+output.logstash:
   hosts: ["172.31.88.154:9200"]
 
 ##default
@@ -15,9 +15,6 @@ filebeat.config.modules:
   reload.enabled: false
 setup.template.settings:
   index.number_of_shards: 1
-
-
-
 
 processors:
   - add_host_metadata:
