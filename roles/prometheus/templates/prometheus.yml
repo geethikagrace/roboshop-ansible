@@ -23,6 +23,8 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
-  - job_name: "Ec2-node"
+  - job_name: "Ec2-nodes"
     static_configs:
       - targets: [ "172.31.95.162:9100" ]
+
+
