@@ -22,19 +22,18 @@ scrape_configs:
   - job_name: "prometheus"
     static_configs:
       - targets: ["localhost:9090"]
-
-  - job_name: "Ec2-nodes"
+  - job_name: "ec2-nodes"
     ec2_sd_configs:
       - region: us-east-1
         port: 9100
         filters:
           - name: tag:Monitor
             values: [ "true" ]
+    relabel_configs:
+      {% for label in labels %}
 
-      relabel_configs:
-         {% for label in labels %}
+      - source_labels: [ __meta_ec2_tag_{{ label.tag }} ]
+        target_label: {{ label.label }}
+      {%- endfor %}
 
-         - source_labels: [ __meta_ec2_tag_{{ label.tag }} ]
-           target_label: {{ label.label }}
-         {%- endfor %}
 
