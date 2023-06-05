@@ -3,7 +3,7 @@
     src: "{{item}}.yml"
     dest: /opt/prometheus/{{item}}.yml
   loop:
-    - promotheus
+    - prometheus
     - alerts
 
 
