@@ -22,9 +22,6 @@
 
 
 
-#      mongo --host {{ lookup('aws_ssm', '{{ env }}.{{ component }}.mongo_endpoint', region='us-east-1' ) }} </app/schema/{{component}}.js
-
-
 
 - name: Load MySQL Schema
   when: schema_setup == "mysql"
